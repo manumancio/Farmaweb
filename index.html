@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- optimizacion del seo -->
+    <meta name="description"
+        content="FarmaWeb es una Empresa destinada a la provisión de medicamentos y productos para la salud a través de compras online">
+    <meta name="keyword"
+        content="FARMACIA, E-COMMERCE, MEDICAMENTOS, COMPRA, DELIVERY, ENVIOS, FARMACOS, CREMAS, PRODUCTOS MEDICOS, SALUD">
+
+    <!--  Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!--  Fontfamily -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <!--  Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!--  Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!--  CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <title>FarmaWeb | Tu Farmacia</title>
+</head>
+
+<body>
+    <header>
+        <!--  nav -->
+        <nav class="navbar pb-1 pt-0 bg-light fixed-top">
+            <div class="top-nav">
+                <h3>Hasta 3 cuotas sin interés ¡Envío gratis! Rosario desde $5500</h3>
+            </div>
+            <div class="container-fluid pt-3 pb-4">
+                <a class="navbar-brand" href="./index.html">FarmaWeb</a>
+
+                <!-- buscador -->
+                <div class="nav-responsive">
+                    <div class="buscador-div">
+                        <input type="search" id="buscadorMedicamentos" class="buscador-input"
+                            placeholder="Busca en nuestra tienda">
+                        <button id="btnBuscadorMedicamentos" class="btn btn-outline-success"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- nav -->
+                <div class="nav-responsive">
+                    <button id="botonCarroCompras" class="shop-icon"><i class="bi bi-shop-window"><span
+                                id="contadorCarroCompras">0</span></i></button>
+                    <button class="navbar-toggler navbar-toggler--activo" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="offcanvas offcanvas-end navbar-toggler--activo" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a class="navbar-brand"
+                                href="./index.html">FarmaWeb</a></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#salud">Salud | Medicamentos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#belleza">Belleza</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#bebes-maternidad">Bebés y Maternidad</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#cuidado-personal">Cuidado Personal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#reservas">Más Salud | <b>Reservá
+                                        tu turno</b></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-nav">
+                <ul class="bottom-nav-container">
+                    <li class="bottom-nav-item">
+                        <a class="bottom-nav-link" href="#salud">Salud</a>
+                    </li>
+                    <li class="bottom-nav-item">
+                        <a class="bottom-nav-link" href="#belleza">Dermocosmética</a>
+                    </li>
+                    <li class="bottom-nav-item">
+                        <a class="bottom-nav-link" href="#belleza">Perfumes</a>
+                    </li>
+                    <li class="bottom-nav-item">
+                        <a class="bottom-nav-link" href="#bebes-maternidad">Bebés y Maternidad</a>
+                    </li>
+                    <li class="bottom-nav-item">
+                        <a class="bottom-nav-link" href="#cuidado-personal">Cuidado Personal</a>
+                    </li>
+                    <li class="bottom-nav-item">
+                        <a class="bottom-nav-link active" aria-current="page" href="#reservas">Más Salud | <b>Reservá
+                                tu turno</b></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="buscador-div-container">
+            <div id="displayCoincidencias" class="buscador-div-item ">
+                <!-- genera los divs nuevos del buscador  -->
+            </div>
+        </div>
+
+        <!--  hero // slider -->
+        <div>
+            <div class="slider-manual-container">
+                <img id="slider" class="slider-img" alt="medicamentos en promoción">
+                <div class="slider-div">
+                    <button id="slideManualDerecho" class="slider-manual-btn-derecho slider-manual-btn"><i
+                            class="bi bi-caret-right-fill slider-manual-btn__icon"></i></i></button>
+                    <button id="slideManualIzquierdo" class="slider-manual-btn-izquierdo slider-manual-btn"><i
+                            class="bi bi-caret-left-fill slider-manual-btn__icon"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- modal // setTimeOut -->
+        <div id="modalItem" class="modal-item">
+            <button id="botonCierreModal"><i class="bi bi-x-circle"></i></button>
+            <img src="./images/modal.jpg" alt="Delivery en Rosario a partir de $5500">
+            <h4>Sumá productos a tu carrito y ganate el envío <b>GRATIS</b></h4>
+        </div>
+
+        <!--  seccion ventajas -->
+        <section id="salud" class="ventajas-container">
+            <div class="ventajas-item">
+                <i class="bi bi-truck ventajas__icon"></i>
+                <h3 class="ventajas__title">Envío <b>gratis</b> en compras mayores a $5500.</h3>
+            </div>
+            <div class="ventajas-item">
+                <i class="bi bi-geo-alt ventajas__icon"></i>
+                <h3 class="ventajas__title">Retirá tu pedido <b>gratis y sin espera</b> en la farmacia.</h3>
+            </div>
+            <div class="ventajas-item">
+                <i class="bi bi-capsule-pill ventajas__icon"></i>
+                <h3 class="ventajas__title">Compras de Medicamentos con receta.</h3>
+            </div>
+            <div class="ventajas-item ">
+                <i class="bi bi-piggy-bank ventajas__icon"></i>
+                <h3 class="ventajas__title">Aprovechá nuestros <b>descuentos exclusivo</b> y hasta <b>3 cuotas sin interés.</b></h3>
+            </div>
+            <div class="ventajas-item">
+                <i class="bi bi-arrow-left-right ventajas__icon"></i>
+                <h3 class="ventajas__title">Políticas de Cambios y Devoluciones.</h3>
+            </div>
+        </section>
+
+        <!--  seccion shop -->
+        <section class="shop-section">
+            <h3 class="shop-section__title">Salud - Medicamentos</h3>
+            <h4 class="shop-section__subtitle">Medicamentos | Analgésicos</h4>
+            <p>Calmá el dolor. Te invitamos a conocer la más amplia gama de productos y ofertas increibles pensadas para
+                vos.</p>
+            <div id="productsContainer" class="shop-container">
+                <!-- genera los divs nuevos  -->
+            </div>
+        </section>
+
+        <!-- seccion carro compras // offcanvas-->
+        <div class="carrito-OffCanvas " id="carritoOffCanvas">
+            <section class="carrito-OffCanvas-header">
+                <h5>Carrito de compras</h5>
+                <button id="botonCierreOffCanvas"><i class="bi bi-x-circle"></i></button>
+            </section>
+            <section class="carrito-OffCanvas-body">
+                <div id="resultadosCompra" class="section-carroComprasFinal">
+                    <div id="contenedorCarroCompras" class="carroCompras-container">
+                        <!-- genera nuevos div -->
+                    </div>
+                    <button id="vaciarCarroCompras" class="btn btn-danger p-1">Vaciar Carrito
+                    </button>
+                    <div class="carroCompras-descripcionPrecio">
+                        <p class="carroCompras-descripcionPrecio-item">Precio de productos: $ <span
+                                id="precioTotal"></span></p>
+                        <p class="carroCompras-descripcionPrecio-item"><b>Precio con descuento: $ </b><span
+                                id="precioConDescuento"></span> </p>
+                        <p class="carroCompras-descripcionPrecio-item carroCompras-descripcionPrecio-item--active">
+                            TOTAL: $ <span id="precioFinal"></span></p>
+                        <p class="carroCompras-descripcionPrecio-item carroCompras-descripcionPrecio-item--cuotas">O
+                            hasta <b>3</b> cuotas sin interés de $ <b><span id="precioEnCuotas"></span></b></p>
+                        <button id="botonIniciarCompra" class="btn btn-dark m-1 px-4">Iniciar Compra</button>
+                        <div id="siNoHizoCompra">
+                            <!-- tituloNoHayCompra -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="banner-div">
+            <img src="./images/banner.jpg" alt="">
+        </div>
+    </main>
+
+    <!--  footer -->
+    <footer>
+        <div>
+            <h5 class="p-1 m-0">FarmaWeb | Manuela Mancione</h5>
+        </div>
+    </footer>
+
+    <!--  Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+
+    <!-- sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!--  javascript -->
+    <script src="./js/products.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
